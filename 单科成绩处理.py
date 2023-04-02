@@ -14,6 +14,8 @@ DELETE_COLUMNS=['序号','班级','自定义考号','准考证号','客观分','
 
 @pywebio.config(title='单科成绩处理',description='单科成绩突出显示满分的；显示图片')
 def subject():
+    #宽屏
+    pywebio.session.set_env(output_max_width='95%')
     def download(data:Dict[str,pd.DataFrame]):
         for name,df in data.items():
             #检查扩展名
